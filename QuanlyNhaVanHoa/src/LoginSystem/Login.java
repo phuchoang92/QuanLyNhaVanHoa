@@ -171,7 +171,8 @@ public class Login extends javax.swing.JFrame {
         if(sb.length() > 0)
             JOptionPane.showMessageDialog(this, sb.toString());
         else {
-            if(name.equals("quanlynhavanhoa") && password.equals("nhom8")){
+            if(name.equals("admin") && password.equals("admin")){
+                this.dispose();
                 try {
                     new MainSystem().setVisible(true);
                 } catch (SQLException ex) {

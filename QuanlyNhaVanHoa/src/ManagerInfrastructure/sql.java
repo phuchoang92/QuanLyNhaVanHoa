@@ -6,11 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class sql {
+
     public static void insertInfras(String name,int count, String cf, String lc, String date, String insu) throws SQLException, ClassNotFoundException{
         Class.forName("com.mysql.jdbc.Driver");
         String url = "jdbc:mysql://localhost:3306/ktpm";
-        try (Connection con = DriverManager.getConnection(url, "root", "huy123")) {
-            String sql = "INSERT INTO infras (name, count, importFrom, location, dateImport, insurance) VALUES (?, ?, ?, ?, ?, ?);";
+        try (Connection con = DriverManager.getConnection(url, "root", "Hoanghuuphuc1415")) {
+            String sql = "INSERT INTO ktpm.infras (name, count, importFrom, location, dateImport, insurance) VALUES (?, ?, ?, ?, ?, ?);";
 
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, name);
@@ -27,7 +28,7 @@ public class sql {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ktpm", "root", "huy123");
         String sql1 = "UPDATE user_info SET address = 'VietNam' WHERE address = 'England';";
-        String sql = "UPDATE infras SET "+
+        String sql = "UPDATE ktpm.infras SET "+
                 "count = "+"'"+count+"', "+
                 "importFrom = "+"'"+cf+"', "+
                 "location = "+"'"+lc+"', "+
@@ -40,18 +41,13 @@ public class sql {
     }
 
     public static void deleteInfras(String name) throws SQLException, ClassNotFoundException {
+
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ktpm", "root", "huy123");
-        String sql = "DELETE FROM infras WHERE name = '"+name+"';";
+        String sql = "DELETE FROM ktpm.infras WHERE name = '"+name+"';";
         PreparedStatement pstmt = con.prepareStatement(sql);
         pstmt.executeUpdate();
         con.close();
         System.out.println("DELETED!");
-    }
-}
-
-class test{
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        sql.deleteInfras("Bui Van Huy");
     }
 }
