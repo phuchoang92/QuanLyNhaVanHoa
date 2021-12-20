@@ -11,6 +11,7 @@ public class listOfEvent extends javax.swing.JFrame {
 
     private DefaultTableModel tblModel;
     private final List<Event> list = new ArrayList<>();
+    private boolean findFlag = false;
 
     public listOfEvent() throws SQLException {
         initComponents();
@@ -177,27 +178,26 @@ public class listOfEvent extends javax.swing.JFrame {
 
     }
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {
-        fillTable();
-    }
-
-
     private void findButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        String findName = findTextField.getText();
+        if(findName.length() > 0 ){
+
+        }
 
     }
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        if(findFlag == true){
+
+        }
     }
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

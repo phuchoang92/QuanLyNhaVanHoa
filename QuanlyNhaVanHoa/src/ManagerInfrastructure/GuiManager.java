@@ -445,13 +445,11 @@ public final class GuiManager extends javax.swing.JFrame {
                     if(i.getName().equals(name)){
                         if(!countTxt.getText().isEmpty()){
                             i.setCount(Integer.valueOf(countTxt.getText()));
-
                             try {
                                 sql.updateInfras(name, Integer.valueOf(countTxt.getText()), i.getImportFirm(), i.getLocation(), i.getDateImport(), i.getInsurance());
                             } catch (ClassNotFoundException | SQLException ex) {
                                 Logger.getLogger(GuiManager.class.getName()).log(Level.SEVERE, null, ex);
                             }
-
                             for(InfrasQuality q: listQuality){
                                 if(q.getName().equals(name)){
                                     q.setCount(Integer.valueOf(countTxt.getText()));
