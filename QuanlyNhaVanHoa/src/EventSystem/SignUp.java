@@ -1,33 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package EventSystem;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
-import java.util.jar.Attributes;
-import javax.swing.*;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-/**
- *
- * @author ACER
- */
-public class PriEventSignUp extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SignUp
-     */
-    public PriEventSignUp() {
+public class SignUp extends javax.swing.JFrame {
+
+    public SignUp() {
         initComponents();
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
+    public boolean check(JComboBox c){
+        if(c.getSelectedItem().toString().equals(c.getItemAt(0).toString()))
+            return false;
+        return true;
+    }
+
+    public boolean checkJComboBox(){
+        return check(de)&&check(ds)&&check(me)&&check(ms)&&check(ys)&&check(ys)&&check(he)&&check(ms2)&&check(me1)&&check(hs)&&check(ts)&&check(te);
+    }
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -39,28 +40,30 @@ public class PriEventSignUp extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        ds = new javax.swing.JComboBox<>();
+        ms = new javax.swing.JComboBox<>();
+        ys = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        hour = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        hs = new javax.swing.JComboBox<>();
+        ts = new javax.swing.JComboBox<>();
+        ms2 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        txtAddress = new javax.swing.JTextField();
+        inOrder = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         txtPhoneNumber = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         btInsert = new javax.swing.JButton();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        de = new javax.swing.JComboBox<>();
+        me = new javax.swing.JComboBox<>();
+        ye = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        hour1 = new javax.swing.JComboBox<>();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        he = new javax.swing.JComboBox<>();
+        te = new javax.swing.JComboBox<>();
+        me1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,13 +108,16 @@ public class PriEventSignUp extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 204, 255));
         jLabel4.setText("Ngày đăng kí");
 
+        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton1.setSelected(true);
         jRadioButton1.setText("Nam");
 
+        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton2.setText("Nữ");
 
+        buttonGroup1.add(jRadioButton3);
         jRadioButton3.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton3.setText("Khác");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -120,19 +126,21 @@ public class PriEventSignUp extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ngày", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        ds.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ngày", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tháng", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        ms.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tháng", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Năm", "2021", "2022" }));
+        ys.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Năm", "2021", "2022" }));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 204, 255));
         jLabel5.setText("Thời gian đăng kí");
 
-        hour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thời gian", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        hs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Giờ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Am", "Pm" }));
+        ts.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buổi", "Sáng", "Chiều" }));
+
+        ms2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phút", "00", "15", "30", "45" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -144,11 +152,11 @@ public class PriEventSignUp extends javax.swing.JFrame {
                                         .addComponent(jSeparator1)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(ds, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(ys, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -160,12 +168,14 @@ public class PriEventSignUp extends javax.swing.JFrame {
                                                                 .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(18, 18, 18)
                                                                 .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addComponent(txtFullname, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                                .addComponent(hour, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                                        .addComponent(txtFullname, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(hs, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(ms2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(ts, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addContainerGap())
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,15 +203,16 @@ public class PriEventSignUp extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jComboBox1)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(ds)
+                                        .addComponent(ms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ys, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(hour)
-                                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(hs)
+                                        .addComponent(ts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ms2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(62, 62, 62))
         );
 
@@ -235,14 +246,13 @@ public class PriEventSignUp extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 204, 255));
         jLabel6.setText("Liên hệ");
 
-        txtAddress.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtAddress.setForeground(new java.awt.Color(102, 102, 102));
-        txtAddress.setText("Hanoi");
-        txtAddress.setBorder(null);
+        inOrder.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        inOrder.setForeground(new java.awt.Color(102, 102, 102));
+        inOrder.setBorder(null);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 204, 255));
-        jLabel7.setText("Địa chỉ");
+        jLabel7.setText("Mục đích");
 
         txtPhoneNumber.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtPhoneNumber.setForeground(new java.awt.Color(102, 102, 102));
@@ -253,19 +263,25 @@ public class PriEventSignUp extends javax.swing.JFrame {
         btInsert.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btInsert.setForeground(new java.awt.Color(0, 102, 255));
         btInsert.setText("Đăng kí");
-        btInsert.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btInsert.setBorder(null);
         btInsert.setContentAreaFilled(false);
         btInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btInsertActionPerformed(evt);
+                try {
+                    btInsertActionPerformed(evt);
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ngày", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        de.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ngày", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tháng", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        me.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tháng", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Năm", "2021", "2022" }));
+        ye.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Năm", "2021", "2022" }));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 204, 255));
@@ -275,9 +291,11 @@ public class PriEventSignUp extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(0, 204, 255));
         jLabel11.setText("Ngày kết thúc");
 
-        hour1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thời gian", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        he.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Giờ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Am", "Pm" }));
+        te.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buổi", "Sáng", "Chiều" }));
+
+        me1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phút", "00", "15", "30", "45" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -291,54 +309,55 @@ public class PriEventSignUp extends javax.swing.JFrame {
                                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, 0)
                                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .addComponent(btInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(39, 39, 39))
+                                                        .addComponent(jSeparator2)
+                                                        .addComponent(inOrder)
+                                                        .addComponent(txtPhoneNumber)
+                                                        .addComponent(jSeparator3)
+                                                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(de, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(26, 26, 26)
+                                                                .addComponent(me, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(ye, 0, 97, Short.MAX_VALUE))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                                .addComponent(btInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
                                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(txtAddress)
-                                                                        .addComponent(txtPhoneNumber)
-                                                                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                                                .addComponent(hour1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addGap(18, 18, 18)
-                                                                                                .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                                                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                        .addGap(18, 18, 18)
-                                                                                                        .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                                                        .addGap(18, 18, 18)
-                                                                                                        .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                .addGap(0, 15, Short.MAX_VALUE)))))))
+                                                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGap(0, 0, Short.MAX_VALUE))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(he, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(26, 26, 26)
+                                                                .addComponent(me1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(te, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addContainerGap())
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(70, 70, 70)
                                                 .addComponent(jLabel7)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(inOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jLabel6)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -349,21 +368,19 @@ public class PriEventSignUp extends javax.swing.JFrame {
                                                 .addComponent(jLabel11)
                                                 .addGap(18, 18, 18)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(me, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(ye, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(de, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(9, 9, 9)
                                                 .addComponent(jLabel10)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                        .addComponent(hour1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addGap(135, 135, 135)
-                                                                .addComponent(btInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addContainerGap(36, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(he, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(te, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(me1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(70, 70, 70)
+                                                .addComponent(btInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(46, 46, 46))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -374,94 +391,99 @@ public class PriEventSignUp extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
-    }// </editor-fold>
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
 
-    }
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
 
-    private void btInsertActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btInsertActionPerformed(java.awt.event.ActionEvent evt) throws ClassNotFoundException, SQLException {//GEN-FIRST:event_btInsertActionPerformed
         String name = txtFullname.getText();
+        String in = inOrder.getText();
+        String phone = txtPhoneNumber.getText();
         StringBuilder sb = new StringBuilder();
 
         if(name.equals(""))
             sb.append("Tên trống!!!");
+        else if(inOrder.equals(""))
+            sb.append("Mục đích vẫn trống!!!");
+        else if(phone.length() < 9)
+            sb.append("Hãy nhập số điện thoại của bạn!!!");
+        else if(checkJComboBox() == false)
+            sb.append("Vui lòng đặt thời gian phù hợp");
 
         if(sb.length() > 0)
             JOptionPane.showMessageDialog(this, sb.toString());
-        else {
-            int choose = JOptionPane.showConfirmDialog(this,"Bạn muốn đăng kí online ?","",JOptionPane.YES_OPTION);
-            if(choose == JOptionPane.YES_OPTION){
+        else{
+            String gender;
+            if(jRadioButton1.isSelected()){
+                gender = "Nam";
+            }else if(jRadioButton2.isSelected())
+                gender = "Nữ";
+            else gender = "Khác";
+
+            String dayStart = "";
+            dayStart += ds.getSelectedItem().toString()+"/"+ms.getSelectedItem().toString()+"/"+ys.getSelectedItem().toString();
+            String timeStart ="";
+            timeStart += hs.getSelectedItem().toString()+":"+ms2.getSelectedItem().toString()+":"+ts.getSelectedItem().toString();
+            String dayEnd = "";
+            dayEnd += de.getSelectedItem().toString()+"/"+me.getSelectedItem().toString()+"/"+ye.getSelectedItem().toString();
+            String timeEnd ="";
+            timeEnd += he.getSelectedItem().toString()+":"+me1.getSelectedItem().toString()+":"+te.getSelectedItem().toString();
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/ktpm";
+            try (Connection con = DriverManager.getConnection(url, "root", "Hoanghuuphuc1415")) {
+                String sql = "INSERT INTO ktpm.sign_up (name,hostName, startTime, endTime, dayEnd, dayStart, gender, phoneNumber) VALUES (?, ?, ?, ?, ?,? ,?,?)";
+
+                PreparedStatement pstmt = con.prepareStatement(sql);
+                pstmt.setString(1, in);
+                pstmt.setString(2, name);
+                pstmt.setString(3, timeStart);
+                pstmt.setString(4, timeEnd);
+                pstmt.setString(5, dayEnd);
+                pstmt.setString(6, dayStart);
+                pstmt.setString(7, gender);
+                pstmt.setString(8, phone);
+                pstmt.execute();
             }
+            JOptionPane.showMessageDialog(this, "Thông tin của quý khách đã được thêm vào dữ liệu");
+            this.dispose();
         }
-    }
 
-    private void txtFullnameActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
+    }//GEN-LAST:event_btInsertActionPerformed
 
-    private void txtFullnameKeyPressed(java.awt.event.KeyEvent evt) {
+    private void txtFullnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFullnameActionPerformed
+
+    }//GEN-LAST:event_txtFullnameActionPerformed
+
+    private void txtFullnameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFullnameKeyPressed
+    }//GEN-LAST:event_txtFullnameKeyPressed
+
+    private void txtFullnameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFullnameMouseClicked
         txtFullname.setText("");
-    }
+    }//GEN-LAST:event_txtFullnameMouseClicked
 
-    private void txtFullnameMouseClicked(java.awt.event.MouseEvent evt) {
-        txtFullname.setText("");
-    }
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PriEventSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PriEventSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PriEventSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PriEventSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PriEventSignUp().setVisible(true);
+                new SignUp().setVisible(true);
             }
         });
     }
 
-    // Variables declaration - do not modify
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btInsert;
-    private javax.swing.JComboBox<String> hour;
-    private javax.swing.JComboBox<String> hour1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> de;
+    private javax.swing.JComboBox<String> ds;
+    private javax.swing.JComboBox<String> he;
+    private javax.swing.JComboBox<String> hs;
+    private javax.swing.JTextField inOrder;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -481,8 +503,15 @@ public class PriEventSignUp extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField txtAddress;
+    private javax.swing.JComboBox<String> me;
+    private javax.swing.JComboBox<String> me1;
+    private javax.swing.JComboBox<String> ms;
+    private javax.swing.JComboBox<String> ms2;
+    private javax.swing.JComboBox<String> te;
+    private javax.swing.JComboBox<String> ts;
     private javax.swing.JTextField txtFullname;
     private javax.swing.JTextField txtPhoneNumber;
-    // End of variables declaration
+    private javax.swing.JComboBox<String> ye;
+    private javax.swing.JComboBox<String> ys;
+    // End of variables declaration//GEN-END:variables
 }

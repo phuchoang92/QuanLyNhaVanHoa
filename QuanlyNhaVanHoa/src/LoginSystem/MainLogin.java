@@ -9,6 +9,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
+
+import EventSystem.Event;
+import EventSystem.SignUp;
 import javax.swing.border.LineBorder;
 
 
@@ -781,6 +784,7 @@ public class MainLogin extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new SignUp();
     }
 
     /**

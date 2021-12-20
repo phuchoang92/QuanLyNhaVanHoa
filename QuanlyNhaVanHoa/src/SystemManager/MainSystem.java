@@ -7,7 +7,6 @@ package SystemManager;
 
 import EventSystem.AddEvent;
 import EventSystem.GeneralEventSignUp;
-import EventSystem.PriEventSignUp;
 import ManagerInfrastructure.GuiManager;
 import MembersManager.Members;
 import java.awt.Color;
@@ -543,7 +542,6 @@ public class MainSystem extends javax.swing.JFrame {
     }
 
     private void sortEventButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        new PriEventSignUp().setVisible(true);
     }
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {

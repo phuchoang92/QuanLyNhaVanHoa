@@ -1,7 +1,6 @@
 package ManagerInfrastructure;
 
-import MembersManager.Members;
-//import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+import MembersManager.Members;//import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.Connection;
