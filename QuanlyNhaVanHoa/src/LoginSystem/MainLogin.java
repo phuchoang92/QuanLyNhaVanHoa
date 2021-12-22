@@ -22,7 +22,7 @@ public class MainLogin extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -32,6 +32,7 @@ public class MainLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
+
         jLabel3 = new javax.swing.JLabel(){
             ImageIcon icon = new ImageIcon("P:\\Projects\\QuanLyNhaVanHoa\\QuanlyNhaVanHoa\\Picture\\trangdau.gif");
             public void paintComponent(Graphics g){
@@ -757,7 +758,7 @@ public class MainLogin extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new Login().setVisible(true);

@@ -27,10 +27,10 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 
 public class MainSystem extends javax.swing.JFrame {
 
-    private DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
     private DefaultTableModel tblModel;
     private final List<Members> list = new ArrayList<>();
 
@@ -69,6 +69,14 @@ public class MainSystem extends javax.swing.JFrame {
         tblModel.setColumnIdentifiers(cols);
         tblMembers.setModel(tblModel);
         initData();
+
+        tblMembers.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        TableColumnModel colModel=tblMembers.getColumnModel();
+        colModel.getColumn(0).setMaxWidth(50);
+        colModel.getColumn(0).setCellRenderer( centerRenderer );
+
         thanhVien.setText(""+list.size());
         feeBigLabel.setText(""+1000000000);
 
@@ -104,8 +112,7 @@ public class MainSystem extends javax.swing.JFrame {
 
         for(Members staff : list){
 
-            tblMembers.getColumnModel().getColumn(0).setCellRenderer( centerRenderer );
-            tblModel.addRow(new String[]{String.valueOf(++n),staff.getName(),staff.getJob(),staff.dateOfBirth()
+            tblModel.addRow(new String[]{String.valueOf(++n),"         "+staff.getName(),"         "+staff.getJob(),"         "+staff.dateOfBirth()
                     ,staff.getPhoneNumber()});
         }
 
@@ -189,9 +196,8 @@ public class MainSystem extends javax.swing.JFrame {
                         "Title 1", "Title 2", "Title 3", "Title 4"
                 }
         ));
-
         tblMembers.setGridColor(new java.awt.Color(0, 204, 255));
-        tblMembers.setRowHeight(24);
+        tblMembers.setRowHeight(36);
         jScrollPane1.setViewportView(tblMembers);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
