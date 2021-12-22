@@ -21,6 +21,7 @@ public class GeneralEventSignUp extends javax.swing.JFrame {
 
     public GeneralEventSignUp() throws SQLException {
         initComponents();
+        setTitle("Lịch Tổ Chức Sự Kiện");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         initTable();

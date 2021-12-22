@@ -17,6 +17,7 @@ public class MainLogin extends javax.swing.JFrame {
 
     public MainLogin() {
         initComponents();
+        setTitle("Quản Lý Nhà Văn Hóa");
         setResizable(false);
         setLocationRelativeTo(null);
     }

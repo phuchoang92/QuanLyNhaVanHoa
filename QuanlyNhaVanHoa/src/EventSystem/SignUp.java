@@ -11,6 +11,7 @@ import java.sql.SQLException;
 public class SignUp extends javax.swing.JFrame {
 
     public SignUp() {
+        setTitle("Đăng Ký Sự Kiện");
         initComponents();
         setLocationRelativeTo(null);
     }

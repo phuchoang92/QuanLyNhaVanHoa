@@ -11,6 +11,7 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+        setTitle("Đăng Nhập");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
     }
