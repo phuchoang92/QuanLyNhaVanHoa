@@ -17,7 +17,7 @@ public class Login extends javax.swing.JFrame {
 
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -144,21 +144,21 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         btLoginActionPerformed(evt);
-    }
+    }//GEN-LAST:event_txtNameActionPerformed
 
-    private void txtNameMouseClicked(java.awt.event.MouseEvent evt) {
+    private void txtNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNameMouseClicked
         txtName.setText("");
-    }
+    }//GEN-LAST:event_txtNameMouseClicked
 
-    private void jpasswordMouseClicked(java.awt.event.MouseEvent evt) {
+    private void jpasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpasswordMouseClicked
         jpassword.setText("");
-    }
+    }//GEN-LAST:event_jpasswordMouseClicked
 
-    private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
         String name = txtName.getText();
         String password = new String(jpassword.getPassword());
 
@@ -180,16 +180,16 @@ public class Login extends javax.swing.JFrame {
             }else JOptionPane.showMessageDialog(this, "Thông tin tài khoản hoặc mật khẩu không chính xác!!!");
         }
 
-    }
+    }//GEN-LAST:event_btLoginActionPerformed
 
-    private void btResetActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btResetActionPerformed
         txtName.setText("");
         jpassword.setText("");
-    }
+    }//GEN-LAST:event_btResetActionPerformed
 
-    private void jpasswordActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpasswordActionPerformed
         btLoginActionPerformed(evt);
-    }
+    }//GEN-LAST:event_jpasswordActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -199,7 +199,7 @@ public class Login extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btLogin;
     private javax.swing.JButton btReset;
     private javax.swing.JLabel jLabel1;
@@ -210,5 +210,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPasswordField jpassword;
     private javax.swing.JTextField txtName;
-    // End of variables declaration
+    // End of variables declaration//GEN-END:variables
 }

@@ -5,21 +5,14 @@
  */
 package LoginSystem;
 
+import EventSystem.SignUp;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
-
-import EventSystem.Event;
-import EventSystem.SignUp;
 import javax.swing.border.LineBorder;
 
-
-
-/**
- *
- * @author ACER
- */
 public class MainLogin extends javax.swing.JFrame {
 
     public MainLogin() {
@@ -29,7 +22,7 @@ public class MainLogin extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -40,7 +33,7 @@ public class MainLogin extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel(){
-            ImageIcon icon = new ImageIcon("QuanlyNhaVanHoa/Picture/trangdau.gif");
+            ImageIcon icon = new ImageIcon("P:\\Projects\\QuanLyNhaVanHoa\\QuanlyNhaVanHoa\\Picture\\trangdau.gif");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -51,7 +44,7 @@ public class MainLogin extends javax.swing.JFrame {
         };
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel(){
-            ImageIcon icon = new ImageIcon("QuanlyNhaVanHoa/Picture/mainSystem.jpg");
+            ImageIcon icon = new ImageIcon("P:\\Projects\\QuanLyNhaVanHoa\\QuanlyNhaVanHoa\\Picture\\mainSystem.jpg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -61,7 +54,7 @@ public class MainLogin extends javax.swing.JFrame {
         };
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel(){
-            ImageIcon icon = new ImageIcon("QuanlyNhaVanHoa/Picture/sukien.jpeg");
+            ImageIcon icon = new ImageIcon("P:\\Projects\\QuanLyNhaVanHoa\\QuanlyNhaVanHoa\\Picture\\sukien.jpeg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -70,7 +63,7 @@ public class MainLogin extends javax.swing.JFrame {
             }
         };
         jLabel6 = new javax.swing.JLabel(){
-            ImageIcon icon = new ImageIcon("QuanlyNhaVanHoa/Picture/sukien2.jpg");
+            ImageIcon icon = new ImageIcon("P:\\Projects\\QuanLyNhaVanHoa\\QuanlyNhaVanHoa\\Picture\\sukien2.jpg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -127,7 +120,7 @@ public class MainLogin extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel(){
-            ImageIcon icon = new ImageIcon("QuanlyNhaVanHoa/Picture/nhaVanHoa.jpg");
+            ImageIcon icon = new ImageIcon("P:\\Projects\\QuanLyNhaVanHoa\\QuanlyNhaVanHoa\\Picture\\nhaVanHoa.jpg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -277,7 +270,7 @@ public class MainLogin extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(51, 0, 255));
-        jButton3.setText("Đăng nhập - khách hàng thường xuyên");
+        jButton3.setText("Đăng Ký Sự Kiện");
         jButton3.setBorder(null);
         jButton3.setContentAreaFilled(false);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
@@ -764,38 +757,33 @@ public class MainLogin extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new Login().setVisible(true);
-    }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-    }
+    }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-    }
+    }//GEN-LAST:event_jButton11ActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-    }
+    }//GEN-LAST:event_jButton12ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         new SignUp();
-    }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -812,10 +800,6 @@ public class MainLogin extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainLogin().setVisible(true);
@@ -823,7 +807,7 @@ public class MainLogin extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -889,5 +873,5 @@ public class MainLogin extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    // End of variables declaration
+    // End of variables declaration//GEN-END:variables
 }
