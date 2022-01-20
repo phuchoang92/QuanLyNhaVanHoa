@@ -21,7 +21,6 @@ public class listOfEvent extends javax.swing.JFrame {
         initTable();
     }
 
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
